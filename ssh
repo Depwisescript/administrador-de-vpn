@@ -1,0 +1,86 @@
+
+# ================================================================
+# 🔥 FIREWALLFALCON – Configuración del servidor OpenSSH
+# Archivo traducido al español (comentarios) sin alterar directivas.
+# ================================================================
+
+# Puerto donde escuchará el servidor SSH
+Port 22
+
+# Protocolo SSH a usar (solo versión 2 es segura)
+Protocol 2 
+
+# Rotación automática de clave del servidor
+KeyRegenerationInterval 3600 
+
+# Tamaño de la clave temporal del servidor
+ServerKeyBits 1024 
+
+# Registro de eventos (auth)
+SyslogFacility AUTH 
+
+# Nivel de detalle del registro
+LogLevel INFO 
+
+# Tiempo máximo permitido antes de desconectar a un usuario que no inicia login
+LoginGraceTime 120 
+
+# ¿Permitir acceso directo del usuario root?
+PermitRootLogin yes 
+
+# Validar permisos estrictos en archivos/usuarios
+StrictModes yes 
+
+# Autenticación con clave RSA
+RSAAuthentication yes 
+
+# Autenticación mediante claves públicas
+PubkeyAuthentication yes 
+
+# Ignorar archivos .rhosts
+IgnoreRhosts yes 
+
+# NO permitir autenticación basada en Rhosts + RSA
+RhostsRSAAuthentication no 
+
+# NO permitir autenticación basada en hosts
+HostbasedAuthentication no 
+
+# No permitir contraseñas vacías
+PermitEmptyPasswords no 
+
+# Permitir el uso de túneles
+PermitTunnel yes
+
+# Deshabilitar desafío/respuesta (no utilizado habitualmente)
+ChallengeResponseAuthentication no 
+
+# Permitir autenticación por contraseña
+PasswordAuthentication yes 
+
+# Habilitar reenvío gráfico X11 (opc)
+X11Forwarding yes 
+X11DisplayOffset 10 
+
+# Motd (mensaje del día) NO se mostrará
+PrintMotd no 
+
+# Mostrar último inicio de sesión
+PrintLastLog yes 
+
+# Mantener viva la conexión mediante TCP keepalive
+TCPKeepAlive yes 
+
+# no UseLogin
+
+# Permitir variables de entorno relacionadas a idioma
+AcceptEnv LANG LC_* 
+
+# Ruta del servidor SFTP
+Subsystem sftp /usr/lib/openssh/sftp-server 
+
+# Autenticación vía PAM (recomendada)
+UsePAM yes
+
+# Banner de bienvenida (archivo manejado por FirewallFalcon)
+Banner /etc/bannerssh
