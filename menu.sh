@@ -777,7 +777,7 @@ restore_user_data() {
     echo -e "\n${C_RED}${C_BOLD}⚠️  ATENCIÓN:${C_RESET} Esto **sobrescribirá** usuarios y ajustes actuales."
     echo -e "Se restaurarán cuentas, contraseñas, límites y expiraciones del backup."
     read -p "👉 ¿Seguro que quieres proceder? (s/n): " confirm
-    if [[ "$confirm" !~ ^([sSyY])$ ]]; then echo -e "\n${C_YELLOW}❌ Restauración cancelada.${C_RESET}"; return; fi
+    if [[ ! "$confirm" =~ ^([sSyY])$ ]]; then echo -e "\n${C_YELLOW}❌ Restauración cancelada.${C_RESET}"; return; fi
     local temp_dir
     temp_dir=$(mktemp -d)
     echo -e "\n${C_BLUE}⚙️  Extrayendo backup a un directorio temporal...${C_RESET}"
