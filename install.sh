@@ -11,8 +11,8 @@ fi
 echo "Instalando FirewallFalcon Manager..."
 
 # URLs (forzamos IPv4 para evitar problemas de IPv6 con GitHub)
-MENU_URL="https://raw.githubusercontent.com/firewallfalcons/FirewallFalcon-Manager/main/menu.sh"
-SSHD_URL="https://raw.githubusercontent.com/firewallfalcons/FirewallFalcon-Manager/main/ssh"
+MENU_URL="https://raw.githubusercontent.com/Depwisescript/administrador-de-vpn/refs/heads/main/menu.sh"
+SSHD_URL="https://raw.githubusercontent.com/Depwisescript/administrador-de-vpn/refs/heads/main/ssh"
 
 # Instalar el menú
 wget -4 -q -O /usr/local/bin/menu "$MENU_URL"
